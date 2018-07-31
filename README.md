@@ -1,8 +1,8 @@
 # Docker GLPI
 
-[![Build Status](https://travis-ci.org/Turgon37/docker-glpi.svg?branch=master)](https://travis-ci.org/Turgon37/docker-glpi)
-[![](https://images.microbadger.com/badges/image/turgon37/glpi.svg)](https://microbadger.com/images/turgon37/glpi "Get your own image badge on microbadger.com")
-[![](https://images.microbadger.com/badges/version/turgon37/glpi.svg)](https://microbadger.com/images/turgon37/glpi "Get your own version badge on microbadger.com")
+[![Build Status](https://travis-ci.org/Wolvverine/docker-glpi.svg?branch=master)](https://travis-ci.org/Wolvverine/docker-glpi)
+[![](https://images.microbadger.com/badges/image/Wolvverine/glpi.svg)](https://microbadger.com/images/Wolvverine/glpi "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/Wolvverine/glpi.svg)](https://microbadger.com/images/Wolvverine/glpi "Get your own version badge on microbadger.com")
 
 This images contains an instance of GLPI web application served by nginx and php5-fpm on port 80
 
@@ -53,13 +53,13 @@ For better example see at the end of this file.
 
 ```
 git clone
-docker build -t turgon37/glpi .
+docker build -t wolvverine/glpi .
 ```
 
 * or Automatic
 
 ```
-docker pull turgon37/glpi
+docker pull wolvverine/glpi
 ```
 
 
@@ -70,13 +70,13 @@ The first time you run this image, set the GLPI_REMOVE_INSTALLER variable to 'no
 ### Without database link (you can use an ip address or a domain name in the installer gui)
 
 ```
-docker run --name glpi --publish 8000:80 --volume data-glpi:/var/www/files --volume data-glpi-config:/var/www/config turgon37/glpi
+docker run --name glpi --publish 8000:80 --volume data-glpi:/var/www/files --volume data-glpi-config:/var/www/config wolvverine/glpi
 ```
 
 ### With database link (if you have any MySQL/MariaDB as a docker container)
 
 ```
-docker run --name glpi --publish 8000:80 --volume data-glpi:/var/www/files --volume data-glpi-config:/var/www/config --link yourdatabase:mysql turgon37/glpi
+docker run --name glpi --publish 8000:80 --volume data-glpi:/var/www/files --volume data-glpi-config:/var/www/config --link yourdatabase:mysql wolvverine/glpi
 ```
 
 ### Docker-compose Specific configuration examples
@@ -86,7 +86,7 @@ docker run --name glpi --publish 8000:80 --volume data-glpi:/var/www/files --vol
 ```
 services:
   glpi:
-    image: turgon37/glpi
+    image: wolvverine/glpi
     environment:
       - GLPI_REMOVE_INSTALLER=yes
       - 'GLPI_INSTALL_PLUGINS=fusioninventory|https://github.com/fusioninventory/fusioninventory-for-glpi/releases/download/glpi9.2%2B1.0/glpi-fusioninventory-9.2.1.0.tar.bz2'
