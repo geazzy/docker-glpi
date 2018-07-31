@@ -33,6 +33,6 @@ script:
   #
   # Deploy
   #
-  #- '[ "$TRAVIS_PULL_REQUEST" == "false" ] || exit 0'
+  - '[ "$TRAVIS_PULL_REQUEST" == "false" ] || exit 0'
   - '[ "$TRAVIS_SECURE_ENV_VARS" == "true" -a  -n "$DOCKERHUB_REGISTRY_USERNAME" -a -n "$DOCKERHUB_REGISTRY_PASSWORD" ]'
   - '[ -f _test_ok ] && ${PWD}/deploy.sh'
